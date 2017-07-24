@@ -1,0 +1,30 @@
+body {
+  background-color: #e0e0e0;
+  font-size: 16px;
+  font-family: -apple-system, BlinkMacSystemFont,
+              "Segoe UI", "Roboto", "Oxygen",
+              "Ubuntu", "Cantarell", "Fira Sans",
+              "Droid Sans", "Helvetica Neue", sans-serif;
+}
+
+.o-container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.o-list-bare {
+  list-style: none;
+}
+
+
+.c-page-head {
+  display: flex;
+  justify-content: center;
+}
+
+  .c-page-head__item {
+    margin-right: 1em;
+    font-weight: bold;
+    cursor: pointer;
+  }
