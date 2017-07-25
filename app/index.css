@@ -5,6 +5,11 @@ body {
               "Segoe UI", "Roboto", "Oxygen",
               "Ubuntu", "Cantarell", "Fira Sans",
               "Droid Sans", "Helvetica Neue", sans-serif;
+  --unit: 1rem;
+  --unit-tiny:   calc(var(--unit) * 0.25);
+  --unit-small:  calc(var(--unit) * 0.5);
+  --unit-large:  calc(var(--unit) * 2);
+  --unit-huge:   calc(var(--unit) * 4);
 }
 
 .o-container {
@@ -15,8 +20,37 @@ body {
 
 .o-list-bare {
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
+.o-flex {
+  display: flex;
+}
+
+.o-flex--column {
+  flex-direction: column;
+}
+
+.o-flex--justify-content-center {
+  justify-content: space-around;
+}
+
+.o-flex--justify-content-around {
+  justify-content: space-around;
+}
+
+.o-flex--align-items-center {
+  align-items: center;
+}
+
+.o-flex--wrap {
+  flex-wrap: wrap;
+}
+
+.o-box {
+  padding: var(--unit);
+}
 
 .c-page-head {
   display: flex;
@@ -28,3 +62,49 @@ body {
     font-weight: bold;
     cursor: pointer;
   }
+
+
+.c-repo-item {
+  margin-left: var(--unit-large);
+  margin-right: 1.2rem;
+  width: 12.5rem
+}
+
+  .c-repo-item__title {
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  .c-repo-item__prominent-text {
+    font-size: 1.2rem;
+    font-weight: bolder;
+  }
+
+.c-avatar {
+  border-radius: 50%;
+  width: 5rem;
+}
+
+.u-margin-top {
+  margin-top: var(--unit) !important;
+}
+
+.u-margin-bottom {
+  margin-bottom: var(--unit) !important;
+}
+
+.u-margin-bottom-large {
+  margin-bottom: var(--unit-large) !important;
+}
+
+.u-margin-left {
+  margin-left: var(--unit) !important;
+}
+
+.u-margin-right {
+  margin-right: var(--unit) !important;
+}
+
+.u-text-center {
+  text-align: center;
+}
