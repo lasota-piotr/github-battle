@@ -33,51 +33,34 @@ export default class Battle extends React.Component {
   }
 
   render() {
-    const {
-      playerOneName,
-      playerTwoName,
-      playerOneImage,
-      playerTwoImage,
-    } = this.state;
     return (
       <main className="u-margin-top">
-        <div className="o-flex o-flex--justify-content-center">
+        <h1 className="u-text-center u-margin-bottom-large">Battle</h1>
+        <div className="o-flex o-flex--justify-content-center o-flex--wrap">
           {
-            !playerOneName ? (
-              <PlayerInput
-                id="playerOne"
-                label="Player One"
-                onSubmit={this.handleSubmit}
-              />
-            ) : (
-              <PlayerPreview
-                username={playerOneName}
-                avatar={playerOneImage}
-                id="playerOne"
-                onReset={this.handleReset}
-              />
-            )
-          }
-          {
-            !playerTwoName ? (
-              <PlayerInput
-                id="playerTwo"
-                label="Player Two"
-                onSubmit={this.handleSubmit}
-              />
-            ) : (
-              <PlayerPreview
-                username={playerTwoName}
-                avatar={playerTwoImage}
-                id="playerTwo"
-                onReset={this.handleReset}
-              />
-            )
+            ['One', 'Two'].map(playerNumber => (
+              !this.state[`player${playerNumber}Name`] ? (
+                <PlayerInput
+                  id={`player${playerNumber}`}
+                  label={`Player ${playerNumber}`}
+                  onSubmit={this.handleSubmit}
+                />
+              ) : (
+                <PlayerPreview
+                  username={this.state[`player${playerNumber}Name`]}
+                  avatar={this.state[`player${playerNumber}Image`]}
+                  id={this.state[`player${playerNumber}`]}
+                  onReset={this.handleReset}
+                />
+              )
+            ))
           }
         </div>
         {
-          (!!playerOneName && !!playerTwoName) ? (
-            <button>Fight!</button>
+          (!!this.state.playerOneName && !!this.state.playerTwoName) ? (
+            <div className="o-flex o-flex--justify-content-center">
+              <button className="c-button c-button--large">Fight!</button>
+            </div>
           ) : null
         }
       </main>
