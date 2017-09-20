@@ -31,7 +31,8 @@ export default class PlayerInput extends React.Component {
     return (
       <form
         onSubmit={this.handleSubmit}
-        className="o-flex o-flex--column o-flex--align-items-center"
+        className="o-flex o-flex--column o-flex--align-items-center
+                   u-margin-bottom-large u-margin-left u-margin-right"
       >
         <label
           htmlFor="username"

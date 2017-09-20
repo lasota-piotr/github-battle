@@ -63,6 +63,19 @@ body {
 
 button:hover {
   cursor: pointer;
+  opacity: 0.8;
+}
+
+h1 {
+  font-size: 36px;
+}
+
+h2 {
+  font-size: 28px;
+}
+
+h3 {
+  font-size: 20px;
 }
 
 .o-container {
@@ -190,6 +203,12 @@ button:hover {
 
 .c-title {
   font-size: 24px;
+}
+
+.c-link-muted {
+  border: 0;
+  background: none;
+  color: dimgray;
 }
 
 
