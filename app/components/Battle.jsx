@@ -41,15 +41,17 @@ export default class Battle extends React.Component {
             ['One', 'Two'].map(playerNumber => (
               !this.state[`player${playerNumber}Name`] ? (
                 <PlayerInput
+                  key={playerNumber}
                   id={`player${playerNumber}`}
                   label={`Player ${playerNumber}`}
                   onSubmit={this.handleSubmit}
                 />
               ) : (
                 <PlayerPreview
+                  key={playerNumber}
                   username={this.state[`player${playerNumber}Name`]}
                   avatar={this.state[`player${playerNumber}Image`]}
-                  id={this.state[`player${playerNumber}`]}
+                  id={`player${playerNumber}`}
                   onReset={this.handleReset}
                 />
               )
