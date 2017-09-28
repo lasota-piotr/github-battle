@@ -1,26 +1,36 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-const Nav = () => (
-  <nav className="c-nav">
-    <ul className="o-list-bare o-flex">
-      <li>
-        <NavLink to="/" exact activeClassName="is-active" className="c-nav__link">
-          Home
-        </NavLink>
-      </li>
-      <li>
-        <NavLink to="/battle" exact activeClassName="is-active" className="c-nav__link">
-          Battle
-        </NavLink>
-      </li>
-      <li>
-        <NavLink to="/popular" exact activeClassName="is-active" className="c-nav__link">
-          Popular
-        </NavLink>
-      </li>
-    </ul>
-  </nav>
-);
+const Nav = () => {
+  const links = [
+    {
+      name: 'Home',
+      url: '/',
+    },
+    {
+      name: 'Battle',
+      url: '/battle',
+    },
+    {
+      name: 'Popular',
+      url: '/popular',
+    },
+  ];
+  return (
+    <nav className="c-nav">
+      <ul className="o-list-bare o-flex">
+        {
+          links.map(link => (
+            <li>
+              <NavLink to={link.url} exact activeClassName="is-active" className="c-nav__link">
+                {link.name}
+              </NavLink>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+  );
+};
 
 export default Nav;
