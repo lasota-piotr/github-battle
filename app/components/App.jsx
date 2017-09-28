@@ -20,7 +20,9 @@ export default function App() {
           <Route path="/popular" component={Popular} />
           <Route render={
             () => (
-              <h1>404 | Not Found</h1>
+              <h1 className="o-flex o-flex--justify-content-center u-margin-top">
+                404 | Not Found
+              </h1>
             )
           }
           />
