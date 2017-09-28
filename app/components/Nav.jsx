@@ -21,7 +21,7 @@ const Nav = () => {
       <ul className="o-list-bare o-flex">
         {
           links.map(link => (
-            <li>
+            <li key={link.name}>
               <NavLink to={link.url} exact activeClassName="is-active" className="c-nav__link">
                 {link.name}
               </NavLink>
