@@ -35,7 +35,9 @@ const RepoGrid = props => (
 );
 
 RepoGrid.propTypes = {
-  repos: PropTypes.arrayOf(PropTypes.string).isRequired,
+  repos: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string,
+  })).isRequired,
 };
 
 const SelectLanguage = (props) => {
