@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import api from '../utils/api';
+import * as api from '../utils/api';
 
 const RepoGrid = props => (
   <ul className="o-flex o-flex--justify-content-around o-flex--wrap o-list-bare">
