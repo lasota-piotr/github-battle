@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import PlayerInput from './PlayerInput';
 import PlayerPreview from './PlayerPreview';
 
@@ -33,6 +35,7 @@ export default class Battle extends React.Component {
   }
 
   render() {
+    const { match } = this.props;
     return (
       <main className="u-margin-top">
         <h1 className="u-text-center u-margin-bottom-large">Battle</h1>
@@ -59,13 +62,26 @@ export default class Battle extends React.Component {
           }
         </div>
         {
-          (!!this.state.playerOneName && !!this.state.playerTwoName) ? (
+          (!!this.state.playerOneName && !!this.state.playerTwoName) && (
             <div className="o-flex o-flex--justify-content-center">
-              <button className="c-button c-button--large">Fight!</button>
+              <Link
+                to={{
+                  pathname: `${match.url}/results`,
+                  search: `?playerOneName=${this.state.playerOneName}&playerTwoName=${this.state.playerTwoName}`,
+                }}
+              >
+                <button className="c-button c-button--large">Fight!</button>
+              </Link>
             </div>
-          ) : null
+          )
         }
       </main>
     );
   }
 }
+
+Battle.propTypes = {
+  match: PropTypes.shape({
+    url: PropTypes.string.isRequired,
+  }).isRequired,
+};
