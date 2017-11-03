@@ -4,7 +4,7 @@ const getProfile = username =>
   axios.get(`https://api.github.com/users/${username}`).then(user => user.data);
 
 const getRepos = username =>
-  axios.get(`https://api.github.com/users/${username}/repos&per_page=100`);
+  axios.get(`https://api.github.com/users/${username}/repos`);
 
 const getStarCount = repos =>
   repos.data.reduce((acc, repo) => acc + repo.stargazers_count, 0);
@@ -35,8 +35,6 @@ export const battle = players =>
     .catch(handleError);
 
 export const fetchPopularRepos = (language) => {
-  const encodedURI = window.encodeURI(
-    `https://api.github.com/search/repositories?q=stars:>1+language:${language}&sort=stars&order=desc&type=Repositories`,
-  );
+  const encodedURI = window.encodeURI(`https://api.github.com/search/repositories?q=stars:>1+language:${language}&sort=stars&order=desc&type=Repositories`);
   return axios.get(encodedURI).then(response => response.data.items);
 };
