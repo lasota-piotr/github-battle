@@ -50,13 +50,20 @@ export default class Battle extends React.Component {
                   onSubmit={this.handleSubmit}
                 />
               ) : (
-                <PlayerPreview
-                  key={playerNumber}
-                  username={this.state[`player${playerNumber}Name`]}
-                  avatar={this.state[`player${playerNumber}Image`]}
-                  id={`player${playerNumber}`}
-                  onReset={this.handleReset}
-                />
+                <div className="u-margin-bottom-large">
+                  <PlayerPreview
+                    key={playerNumber}
+                    username={this.state[`player${playerNumber}Name`]}
+                    avatar={this.state[`player${playerNumber}Image`]}
+                  >
+                    <button
+                      onClick={() => { this.handleReset(`player${playerNumber}`); }}
+                      className="c-link-muted"
+                    >
+                      Reset
+                    </button>
+                  </PlayerPreview>
+                </div>
               )
             ))
           }
