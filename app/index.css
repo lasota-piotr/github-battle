@@ -122,15 +122,17 @@ h3 {
 .c-page-head {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
   .c-page-head__item {
-    margin-right: 1em;
+    margin-right: 1rem;
     font-weight: bold;
     cursor: pointer;
     background: none;
     border: 0;
     outline: 0;
+    margin-bottom: 1rem
   }
 
 
@@ -153,6 +155,10 @@ h3 {
 .c-avatar {
   border-radius: 50%;
   width: 14rem;
+}
+
+.c-avatar--small {
+  width: 8rem;
 }
 
 .c-hero {

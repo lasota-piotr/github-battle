@@ -19,7 +19,7 @@ const RepoGrid = props => (
               <img
                 src={repo.owner.avatar_url}
                 alt={`Avatar ${repo.name}`}
-                className="c-avatar"
+                className="c-avatar c-avatar--small"
               />
             </li>
             <li>
@@ -52,12 +52,11 @@ const SelectLanguage = (props) => {
             key={language}
             style={language === props.selectedLanguage ? { color: '#d0021b' } : null}
             className="c-page-head__item"
-            onClick={props.onSelect.bind(null, language)}
+            onClick={() => { props.onSelect(language); }}
           >
             {language}
           </button>
-        ),
-        )
+        ))
       }
     </div>
   );

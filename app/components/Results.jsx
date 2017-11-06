@@ -26,7 +26,7 @@ const ProfileInfo = ({ profile }) => (
 
 const Card = styled.article`
   background-color: #fff;
-  padding: 2rem;
+  padding: 1.5rem;
   border-radius: 3px;
   box-shadow: 0 4px 13px 0 #999;
 `;
