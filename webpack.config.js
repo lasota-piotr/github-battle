@@ -1,7 +1,10 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-module.exports = {
+const webpack = require('webpack');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+
+const config = {
   entry: './app/index.jsx',
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -26,3 +29,17 @@ module.exports = {
     }),
   ],
 };
+
+if (process.env.NODE_ENV === 'production') {
+  config.plugins.push(
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify(process.env.NODE_ENV),
+      },
+    }),
+    new UglifyJSPlugin(),
+  );
+}
+
+
+module.exports = config;
