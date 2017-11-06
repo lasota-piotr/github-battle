@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import * as api from '../utils/api';
+import Loading from './Loading';
 
 const RepoGrid = props => (
   <ul className="o-flex o-flex--justify-content-around o-flex--wrap o-list-bare">
@@ -105,7 +106,9 @@ export default class Popular extends React.Component {
           this.state.repos ? (
             <RepoGrid repos={this.state.repos} />
           ) : (
-            <div className="o-flex o-flex--justify-content-center u-margin-top">Loading...</div>
+            <div className="o-flex o-flex--justify-content-center">
+              <Loading />
+            </div>
           )
         }
       </div>

@@ -5,6 +5,7 @@ import queryString from 'query-string';
 import styled from 'styled-components';
 import { battle } from '../utils/api';
 import PlayerPreview from './PlayerPreview';
+import Loading from './Loading';
 
 const ProfileInfo = ({ profile }) => (
   <PlayerPreview username={profile.login} avatar={profile.avatar_url}>
@@ -93,8 +94,8 @@ class Results extends React.Component {
           Results
         </h1>
         {loading ? (
-          <div>
-            <h3 className="u-text-center u-margin-top">Loading...</h3>
+          <div className="o-flex o-flex--justify-content-center">
+            <Loading />
           </div>
         ) : (
           <div className="o-flex o-flex--justify-content-center o-flex--wrap">
